@@ -1,8 +1,4 @@
-// If your products.json is /data/products.json:
 import products from "../data/products.json";
-// If your products.json is at repo root ( /products.json ), use this instead:
-// import products from "../products.json";
-
 import ProductCard from "../components/ProductCard";
 
 export default function Home() {
@@ -71,8 +67,8 @@ export default function Home() {
                 ["Concentrates", 21],
               ].map(([n, c]) => (
                 <li key={String(n)} className="flex items-center justify-between">
-                  <a href="#" className="hover:underline">{n as string}</a>
-                  <span className="text-white/50">{c as number}</span>
+                  <a href="#" className="hover:underline">{n}</a>
+                  <span className="text-white/50">{c}</span>
                 </li>
               ))}
             </ul>
@@ -102,7 +98,7 @@ export default function Home() {
 
           {/* Product Grid */}
           <div className="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {products.map((p: any) => (<ProductCard key={p.id} p={p} />))}
+            {products.map((p) => (<ProductCard key={p.id} p={p} />))}
           </div>
 
           {/* Pagination */}
@@ -151,7 +147,7 @@ export default function Home() {
             <div key={i} className="card p-5">
               <div className="text-base">“{r.text}”</div>
               <div className="mt-3 text-sm text-white/70">— {r.name}</div>
-            </div>  {/* <-- this line closes the card div (important!) */}
+            </div>
           ))}
         </div>
       </section>
@@ -194,3 +190,4 @@ export default function Home() {
     </div>
   );
 }
+
