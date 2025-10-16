@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "product": "Blueberry Syrup — 28g (Indica)",
+    "batch": "FB-IND-0825",
+    "date": "2025-09-10",
+    "potency": "THC 24.3%",
+    "terpenes": "2.1%",
+    "pdf": "https://example.com/coa/blueberry-syrup.pdf"
+  },
+  {
+    "id": 2,
+    "product": "Sherblato — 28g (Hybrid)",
+    "batch": "FB-HYB-0825",
+    "date": "2025-09-12",
+    "potency": "THC 22.7%",
+    "terpenes": "1.8%",
+    "pdf": "https://example.com/coa/sherblato.pdf"
+  },
+  {
+    "id": 3,
+    "product": "Pineapple Express — 1g Vape",
+    "batch": "FB-VAPE-0825",
+    "date": "2025-09-14",
+    "potency": "THC 85.1%",
+    "terpenes": "4.0%",
+    "pdf": "https://example.com/coa/pineapple-express.pdf"
+  }
+]
