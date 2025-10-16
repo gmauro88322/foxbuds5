@@ -1,12 +1,20 @@
+// Choose ONE of the two lines below, then delete the other:
+// If your products.json is at /data/products.json:
 import products from "../data/products.json";
+// If your products.json is at the repo root ( /products.json ), use this instead:
+// import products from "../products.json";
+
 import ProductCard from "../components/ProductCard";
 
-export default function Home(){
+export default function Home() {
   return (
     <div className="min-h-screen">
+      {/* Announcement Bar */}
       <div className="w-full bg-green-700 text-center text-xs md:text-sm font-semibold py-2">
         Foxy Buds — Free delivery over $75
       </div>
+
+      {/* Header */}
       <header className="sticky top-0 z-50 border-b border-white/10 bg-neutral-950/80 backdrop-blur">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
@@ -30,6 +38,8 @@ export default function Home(){
           </div>
         </div>
       </header>
+
+      {/* Promo Tiles */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-5 grid grid-cols-1 md:grid-cols-3 gap-4">
         {[
           { t: "BOGO 4g Flower", s: "Buy One Get One", c: "Shop 4g" },
@@ -46,7 +56,10 @@ export default function Home(){
           </div>
         ))}
       </section>
+
+      {/* Main: Sidebar + Filters + Grid */}
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-6 grid grid-cols-1 md:grid-cols-12 gap-6">
+        {/* Sidebar */}
         <aside className="md:col-span-3 lg:col-span-2 space-y-3 md:sticky md:top-24 self-start">
           <div className="card p-4">
             <div className="text-sm font-semibold mb-2">Shop by Category</div>
@@ -74,7 +87,10 @@ export default function Home(){
             </ul>
           </div>
         </aside>
+
+        {/* Content */}
         <section className="md:col-span-9 lg:col-span-10">
+          {/* Filter Bar */}
           <div className="card p-3 flex flex-wrap items-center gap-3">
             <div className="text-sm">Filters</div>
             <div className="ml-auto flex items-center gap-2 text-sm">
@@ -84,16 +100,22 @@ export default function Home(){
               <button className="button">Brand</button>
             </div>
           </div>
+
+          {/* Product Grid */}
           <div className="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {products.map((p:any) => (<(ProductCard as any) key={p.id} p={p} />))}
+            {products.map((p: any) => (<ProductCard key={p.id} p={p} />))}
           </div>
+
+          {/* Pagination */}
           <div className="mt-6 flex items-center justify-center gap-2">
-            {[1,2,3,4].map((n) => (
-              <button key={n} className={`h-9 w-9 rounded-xl border border-white/10 ${n===1? 'bg-white/10':''}`}>{n}</button>
+            {[1, 2, 3, 4].map((n) => (
+              <button key={n} className={`h-9 w-9 rounded-xl border border-white/10 ${n === 1 ? 'bg-white/10' : ''}`}>{n}</button>
             ))}
           </div>
         </section>
       </main>
+
+      {/* Lab Results CTA */}
       <section id="lab" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12">
         <div className="card p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
@@ -103,6 +125,8 @@ export default function Home(){
           <span className="button">View Certificates</span>
         </div>
       </section>
+
+      {/* Wholesale CTA */}
       <section id="wholesale" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12">
         <div className="card p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
@@ -112,6 +136,8 @@ export default function Home(){
           <span className="button">Apply Now</span>
         </div>
       </section>
+
+      {/* Reviews */}
       <section id="reviews" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12">
         <div className="flex items-end justify-between">
           <h3 className="text-2xl md:text-3xl font-extrabold">Customer Reviews</h3>
@@ -126,10 +152,11 @@ export default function Home(){
             <div key={i} className="card p-5">
               <div className="text-base">“{r.text}”</div>
               <div className="mt-3 text-sm text-white/70">— {r.name}</div>
-            </div>
-          ))}
+            ))}
         </div>
       </section>
+
+      {/* Footer */}
       <footer className="mt-16 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
           <div>
